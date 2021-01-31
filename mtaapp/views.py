@@ -28,15 +28,15 @@ def all_hoods(request):
             businesses = Business.objects.filter(hood=request.user.join.hood_id.id)
             posts = Post.objects.filter(hood=request.user.join.hood_id.id)
             comments = Comments.objects.all()
-            
-            return render(request, "hood.html", locals())
+
+            return render(request, "hood/hood.html", locals())
         else:
             neighbourhoods = Neighbourhood.objects.all()
-            return render(request, 'hood.html', locals())
+            return render(request, 'hood/hood.html', locals())
     else:
         neighbourhoods = Neighbourhood.objects.all()
 
-        return render(request, 'hood.html', locals())
+        return render(request, 'hood/hood.html', locals())
 
 
 
@@ -47,7 +47,7 @@ def display_profile(request, id):
     profile = seekuser.profile
     profile_details = Profile.get_by_id(id)
 
-    return render(request,'profile.html',locals())
+    return render(request,'profile/profile.html',locals())
 
 
 
@@ -63,7 +63,7 @@ def create_profile(request):
             redirect('profile')
     else:
         form = ProfileForm()
-    return render(request,'new_profile.html', locals())
+    return render(request,'profile/new_profile.html', locals())
 
 
 
@@ -93,10 +93,10 @@ def create_business(request):
             new_biz=form.save(commit=False)
             new_biz.user = current_user
             new_biz.save()
-            return redirect(home)
+            return redirect('home')
     else:
         form = BusinessForm()
-    return render(request,"businessform.html",locals())
+    return render(request,"business/new_business.html",locals())
 
 
 
@@ -105,7 +105,7 @@ def display_business(request):
     owner = Profile.get_by_id(user)
     businesses = Business.objects.all()
 
-    return render (request, 'business.html', locals())
+    return render (request, 'business/business.html', locals())
 
 
 
@@ -121,7 +121,7 @@ def createHood(request):
             return redirect('home')
     else:
         form = CreateHoodForm()
-        return render(request,'create.html',{"form":form})
+        return render(request,'hood/create_hood.html',{"form":form})
 
 
 
@@ -140,7 +140,7 @@ def new_post(request):
                 return redirect('hoods')
         else:
             form = PostForm()
-            return render(request,'newpost.html',locals())
+            return render(request,'hood/new_post.html',locals())
     else:
         messages.error(request, 'Error! You can only create a forum post after Joining/Creating a neighbourhood')
         return redirect(request,'newpost.html',locals())
@@ -161,12 +161,12 @@ def comment(request,post_id):
                 comment.post = post
                 comment.user = current_user
                 comment.save()
-            return redirect(home)
+            return redirect('home')
 
         else:
             form = CommentForm()
 
-        return render(request, 'comment.html', locals())
+        return render(request, 'business/comment.html', locals())
 
 
 
