@@ -1,0 +1,17 @@
+{% extends 'registration/base.html' %} {% load bootstrap4 %}
+
+
+{% block content %}
+
+{{form.media}}
+<div class="container">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+        <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input type="submit" class="btn btn-outline-info btn-lg" value="post">
+        </form>
+    </div>
+</div>
+{% endblock %}
