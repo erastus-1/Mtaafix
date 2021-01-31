@@ -1,0 +1,32 @@
+{% extends 'registration/base.html' %} {% load bootstrap4 %}
+
+
+{% block content %}
+<div class="container">
+    <hr>
+    <i class="fa fa-plus">
+        <a href="{% url 'createHood' %}"> create hood here</a></i>
+    <hr>
+    <div class="row">
+
+        {% for hood in hoods %}
+        <div class="col-md-4">
+            <div class="card" style="text-align: center;">
+                <div class="card-header">
+                    {{hood.name.capitalize}}
+                </div>
+                <div class="card-body" style="width: auto">
+                    <p>{{hood.pic}}</p>
+                    <p>{{hood.occupants}} Occupants </p>
+                    <p> <i class="fa fa-map-marker" aria-hidden="true"> located in {{ hood.loc }}</i></p>
+                </div>
+                <div class="card-footer" style="float: left;">
+                    <a href=" {% url 'joinHood' hood.id %}" class="btn btn-sm btn-success">Join hood</a>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
