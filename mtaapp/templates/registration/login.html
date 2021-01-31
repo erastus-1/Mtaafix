@@ -1,14 +1,17 @@
 {% extends 'registration/base.html' %} {% load bootstrap4 %}
 
 {% block content %}
-<div class="container">
+<div class="container" style="padding-top: 100px;">
     <div class="row sign-up">
-        <div class="col-md-4">
+        <div class="col-md-6"> 
+            <img class="img-responsive" src="/static/img/h1.jpg" alt="" style="height: 350px; width: 550px;">
+        </div>
+            <div class="col-md-5">
             {% if form.errors %}
             <p class="small">Password or Username is incorrect</p>
             {% endif %}
             <div class="section">
-                <h1>Hood!</h1>
+                <h1 style="text-align: center; color: blue;">Mtaafix Login</h1>
                 <div class="form-section">
                     <form action="/accounts/login/" method="POST">
                         {% csrf_token %}
