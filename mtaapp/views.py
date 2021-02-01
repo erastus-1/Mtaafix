@@ -60,7 +60,7 @@ def create_profile(request):
             profile=form.save(commit=False)
             profile.user = current_user
             profile.save()
-            redirect('profile')
+            redirect('profile/profile.html')
     else:
         form = ProfileForm()
     return render(request,'profile/new_profile.html', locals())
