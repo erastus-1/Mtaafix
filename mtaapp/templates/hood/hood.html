@@ -5,10 +5,11 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-8">
-            <h2><strong>{{hood.name.capitalize}}</strong></h2>
+        <div class="col-md-4">
+            <h2><strong>Name: {{hood.name.capitalize}}</strong></h2>
+            <img class="card-img-top" src="{{hood.image}}" alt="" height="200px" width="200px">
             <h4>Location: <strong>{{hood.loc.capitalize}}</strong></h4>
-            <p>{{hood.occupants}} Occupants</p>
+            <p>Has {{hood.occupants}} Occupants</p>
             <h4>{{hood.bio}}</h4>
 
             <a class="btn btn-sm btn-success" href="{% url 'newpost' %}">Create a Post</a>
@@ -62,7 +63,7 @@
                     <strong>{{ post.title }}</strong>
                 </div>
                 <div class="card-body">
-                    <p>{{post.pic}}</p>
+                    <p>{{post.image}}</p>
                     <p>{{post.description}}</p>
                     <p style="float: left;"><a href="{% url 'comment' post_id=post.id %}"><i class="fa fa-comment"
                                 aria-hidden="true" style="color:black;"></i>Comment</a></p>
