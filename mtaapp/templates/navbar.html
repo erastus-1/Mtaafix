@@ -7,10 +7,10 @@
             <div class="dropdown">
                 <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false" style="font-weight: bolder; font-size: 30px;">
-                    Mtaani</button>
+                    Mtaafix</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <a class="dropdown-item" href="{%  url 'showprofile' user.id %}" type="button">View profile</a>
-                    <button class="dropdown-item" href="{% url 'home' %}" type="button">View hoods</button>
+                    <a class="dropdown-item" href="{%  url 'showprofile' user.id %}" type="button">Profile</a>
+                    <button class="dropdown-item" href="{% url 'home' %}" type="button">All hoods</button>
                 </div>
             </div>
 
@@ -47,8 +47,7 @@
                 {%endif%}
                 <ul class="navbar-nav ml-auto" style="list-style: none">
                     <li>
-                        <i class="fa fa-sign-out" style="font-size:30px;color:black" aria-hidden="true"></i><a
-                            href="/logout">Logout</a>
+                        <a href="/accounts/logout"> <i class="fa fa-sign-out" style="font-size:36px;color:black" aria-hidden="true"></i>Logout</a>
                     </li>
                 </ul>
             </div>
