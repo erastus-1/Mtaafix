@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="row text-center">
-        <small><strong> Businesses in this hood:</strong></small>
+        <small style="color: blue;"><strong> Businesses in this hood:</strong></small>
         <hr>
     </div>
     <table class="table table-striped table-white">
@@ -45,8 +45,7 @@
             </tr>
             {%endfor%}
             {% else %}
-            <h4 class="text-center">No Business has been created for this hood yet. <br>Be the first to create!!<button
-                    style="background-color: lightblue;"><a href="{% url 'business' %}">here</a></button></h4>
+            <h4 class="text-center">No Business has been created for this hood yet. <br>Be the first to create!! <a href="{% url 'business' %}" class="btn btn-sm btn-success">here</a></h4>
             {% endif %}
         </tbody>
     </table>
@@ -54,7 +53,7 @@
 </div>
 {%if posts%}
 <div class="container">
-    <h1 style="text-align: center">Posts</h1>
+    <h1 style="text-align: center; color: blue; font-weight: bolder;">Posts</h1>
     <div class="row">
         {% for post in posts %}
         <div class="col-md-4" style="padding-top: 20px; text-align: center;">
@@ -87,8 +86,7 @@
 </div>
 
 {% else %}
-<h4 class="text-center">No Post has been created for this hood yet. <br>Be the first to create!!<button
-        style="background-color: lightblue;"><a href="{% url 'newpost' %}">here</a></button></h4>
+<h4 class="text-center">No Post has been created for this hood yet. <br>Be the first to create!!!<a href="{% url 'newpost' %}" class="btn btn-sm btn-success">here</a></h4>
 {% endif %}
 
 {%endblock%}

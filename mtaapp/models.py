@@ -19,13 +19,9 @@ class Neighbourhood(models.Model):
     occupants = models.PositiveIntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+
     class Meta:
         verbose_name_plural = 'Location'
-
-    @classmethod
-    def search_hood(cls, search_term):
-        hoods = cls.objects.filter(name__icontains=search_term)
-        return hoods
 
 
     def __str__(self):
@@ -37,6 +33,11 @@ class Neighbourhood(models.Model):
 
     def delete_hood(self):
         self.delete()
+        
+    @classmethod
+    def search_hood(cls, search_term):
+        hoods = cls.objects.filter(name__icontains=search_term)
+        return hoods
 
 
 

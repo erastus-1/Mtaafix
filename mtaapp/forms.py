@@ -11,13 +11,13 @@ class BusinessForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['name','bio','image']
+        fields = ['name','bio']
 
 
 class CreateHoodForm(forms.ModelForm):
     class Meta:
         model = Neighbourhood
-        fields = ['name','loc','occupants','image']
+        fields = ['name','loc','occupants']
 
 class PostForm(forms.ModelForm):
     class Meta:

@@ -1,0 +1,1 @@
+web: gunicorn mtaafix.wsgi --log-file -

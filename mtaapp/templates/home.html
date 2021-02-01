@@ -1,24 +1,24 @@
-{% extends 'registration/base.html' %} {% load bootstrap4 %}
+{% extends 'registration/base.html' %} {% load bootstrap4 %} {% load static %}
 
 
 {% block content %}
 <div class="container">
     <hr>
     <i class="fa fa-plus">
-        <a href="{% url 'createHood' %}"> create hood here</a></i>
+        <a href="{% url 'createHood' %}" class="btn btn-sm btn-success"> create hood</a></i>
     <hr>
     <div class="row">
 
         {% for hood in hoods %}
         <div class="col-md-4">
-            <div class="card" style="text-align: center;">
+            <div class="card">
                 <div class="card-header">
-                    {{hood.name.capitalize}}
+                <strong>Resident name:</strong> {{hood.name.capitalize}}
                 </div>
                 <div class="card-body" style="width: auto">
-                    <p>{{hood.pic}}</p>
-                    <p>{{hood.occupants}} Occupants </p>
-                    <p> <i class="fa fa-map-marker" aria-hidden="true"> located in {{ hood.loc }}</i></p>
+                    <img class="card-img-top" src="{{hood.image}}" alt="" style="height: 200px;">
+                    <p>Has {{hood.occupants}} Occupants </p>
+                    <p> <i class="fa fa-map-marker" aria-hidden="true" style="color: red;"></i> located in {{ hood.loc }}</p>
                 </div>
                 <div class="card-footer" style="float: left;">
                     <a href=" {% url 'joinHood' hood.id %}" class="btn btn-sm btn-success">Join hood</a>
