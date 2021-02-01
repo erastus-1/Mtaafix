@@ -69,7 +69,8 @@
                 </div>
                
                     {%if comments%}
-                    <small style="padding-left: 5px;">Comments</small>
+                    <p style="padding-left: 5px;">Comments</p>
+                    <hr>
                     {% for comment in comments %}
                 <p style="padding-left: 5px;"><strong>{{ user }}</strong> commented: {{ comment.comment }}</p>
 
