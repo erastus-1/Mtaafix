@@ -8,7 +8,7 @@ class NeighborhoodTestClass(TestCase):
     def setUp(self):
         self.new_user = User(username='erass',email='test@gmail.com')
         self.new_user.save()
-        self.utawala = Neighbourhood(name='mutwech',location='utawala',image='image.jpg',occupants=5)
+        self.utawala = Neighbourhood(name='mutwech',location='utawala',occupants=5)
         self.utawala.save()
 
     def tearDown(self):
@@ -79,7 +79,7 @@ class UserTestClass(TestCase):
     def setUp(self):
         self.new_user=User(username="erass",email="test@gmail.com")
         self.new_user.save()
-        self.utawala = Neighbourhood(name='grafix',location='utawala',image='image.jpg',occupants_count=5,admin=self.new_user)
+        self.utawala = Neighbourhood(name='grafix',location='utawala',occupants_count=5,admin=self.new_user)
         self.utawala.save_neighborhood()
         self.erass = User(name="mutwech",user=self.new_user,neighborhood=self.utawala)
         self.erass.save()
