@@ -1,4 +1,4 @@
-# **Hood**
+# **Mtaafix**
 
 ### **Author**
 
@@ -72,6 +72,7 @@ Click to visit the site
 
 ### **Known Bugs**
 
+Yet to implement leaving a neighbourbooh
 
 ### **Contact Information**
 
