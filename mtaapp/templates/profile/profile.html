@@ -15,9 +15,9 @@
                     <p> Bio: {{profile_details.bio}}</p>
                 </li>
             </ul>
-            <button class="btn btn-sm btn-success"><a href="{% url 'profile' %}">Edit Profile</a></button>
+            <a href="{% url 'profile' %}" class="btn btn-sm btn-success">Edit Profile</a>
             <span>
-                <button class="btn btn-sm btn-success"><a href="{% url 'business' %}">Create a business</a></button>
+                <a href="{% url 'business' %}" class="btn btn-sm btn-success">Add business</a>
             </span>
         </div>
     </div>
