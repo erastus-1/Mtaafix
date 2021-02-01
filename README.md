@@ -6,6 +6,13 @@
 
 ### **Description**
 
+Neighbourhood Watch is a web app that allows you to view neighbourhoods, join neighbourhoods and create businesses and posts in their neighbourhoods
+
+### **Specifications**
+
+- Admin Panel that allows adding locations and their descriptions.
+- Search Feature to enable searching locations.
+- Show date location was posted.
 
 ### **Live Link**
 
