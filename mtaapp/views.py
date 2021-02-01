@@ -93,7 +93,7 @@ def create_business(request):
             new_biz=form.save(commit=False)
             new_biz.user = current_user
             new_biz.save()
-            return redirect('home')
+            return redirect('hoods')
     else:
         form = BusinessForm()
     return render(request,"business/new_business.html",locals())
@@ -161,7 +161,7 @@ def comment(request,post_id):
                 comment.post = post
                 comment.user = current_user
                 comment.save()
-            return redirect('home')
+            return redirect('hoods')
 
         else:
             form = CommentForm()
