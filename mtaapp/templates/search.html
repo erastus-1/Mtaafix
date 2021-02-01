@@ -11,10 +11,10 @@
             {%if hoods%}
             {% for hood in hoods %}
                <div class="card-title">
-                    {{hood.name}}
+                    Hood name: {{hood.name}}
                 </div>
                 <div class="card-body">
-                    <p>{{hood.loc}}</p>
+                    <p> Hood location: {{hood.loc}}</p>
                     <a href=" {% url 'joinHood' hood.id %}" class="btn btn-sm btn-success">Join hood</a>
                 </div>
             </div>
