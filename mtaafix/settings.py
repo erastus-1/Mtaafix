@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'mtaafix.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 MODE=config("MODE", default="dev")
-DEBUG = config('DEBUG', default=True, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 # development
 if config('MODE')=="dev":
    DATABASES = {
